@@ -25,5 +25,6 @@ Creamos el archivo app.py
 
 ### Punto 4
 
+Para realizar esto es necesario crear un arhivo de pruebas, este archivo se llamará test_stats.py 
 
 ### Punto 5
