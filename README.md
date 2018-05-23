@@ -23,3 +23,7 @@ Creamos el archivo stats.py
 Creamos el archivo app.py  
 
 
+### Punto 4
+
+
+### Punto 5
