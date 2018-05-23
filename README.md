@@ -1,11 +1,9 @@
 # Examen Parcial 3
 
-### Universidad Icesi
-
-**Curso:** Sistemas Operacionales
-**Estudiante:** Cristian Osorio Trejos
-**Código:** A00056436
-**Correo:** crisosotre@hotmail.com
+**Curso:** Sistemas Operacionales  
+**Estudiante:** Cristian Osorio Trejos  
+**Código:** A00056436  
+**Correo:** crisosotre@hotmail.com  
 **URL:** [https://github.com/crisosotre/so-exam3/tree/crisosotre/so-exam3](https://github.com/crisosotre/so-exam3/tree/crisosotre/so-exam3) 
 
 ## Descripción:
