@@ -28,27 +28,27 @@ Aqui vemos la clase Stats, que contiene los metodos necesarios para brindarnos i
 
 **Creamos el archivo app.py en la carpeta op_stats** (esta carpeta se encuentra en este repositorio con el respectivo archivo).
 
-utilizamos el comando ```vi app.py```
+utilizamos el comando ```$ vi app.py```
 
 ![](img/apppy.PNG)
 
 Este archivo expone los servicios del servicio web flask, para obtener el consumo de cpu, la memoria disponible y el espacio de disco disponible.Para cada método, se especifica la URL que sera invocada cuando necesitemos consumir alguno de los servicios expestos. Aquí en este archivo se importa Flask para poder consumir los servicios de la clase Stats. Por último, se configura el puerto por el cual serán expuestos los servicios.
 
-**Ejecutamos el archivo app.py** con el comando ```python3 app.py```
+**Ejecutamos el archivo app.py** con el comando ```$ python3 app.py```
 
 ![](img/ejecutarapppy.PNG)
 
 Dividimos la pantalla y por medio del comando ```curl``` hacemos las peticiones para consumir cada servicio en la dirección ip 0.0.0.0 en el puerto 8080.
 
-```curl http://0.0.0.0:8080/CPU``` para consumir el servicio que retorna el porcentaje de la CPU.  
-```curl http://0.0.0.0:8080/RAM``` para consumir el servicio que retorna la memoria disponible.  
-```curl http://0.0.0.0:8080/DISCO``` para consumir el servicio que retorna el espacio de disco disponible. 
+```$ curl http://0.0.0.0:8080/CPU``` para consumir el servicio que retorna el porcentaje de la CPU.  
+```$ curl http://0.0.0.0:8080/RAM``` para consumir el servicio que retorna la memoria disponible.  
+```$ curl http://0.0.0.0:8080/DISCO``` para consumir el servicio que retorna el espacio de disco disponible. 
 
 #### Utilizando Postman  
 
 Descargamos Postman de su pagina oficial [https://www.getpostman.com/](https://www.getpostman.com/), lo instalamos y procedemos:
 
-Primero debemos saber cuál es la dirección de nuestra máquina virtual con el comando ```ip a```, seguido de eso, ejecutamos el comando ```python3 app.py``` para levantar el servidor con el puerto 8080 disponible y después en Postman ponemos nuestra dirección ip junto con el puerto 8080 y ponemos el servicio que queremos consumir antecediendo un /. Tenemos que tener en cuenta que estamos haciendo una solicitud HTTP por medio de un método GET el cual nos traerá la información que le solicitamos. No utilizamos POST porque no vamos a cambiar el estado del sistema.
+Primero debemos saber cuál es la dirección de nuestra máquina virtual con el comando ```$ ip a```, seguido de eso, ejecutamos el comando ```$ python3 app.py``` para levantar el servidor con el puerto 8080 disponible y después en Postman ponemos nuestra dirección ip junto con el puerto 8080 y ponemos el servicio que queremos consumir antecediendo un /. Tenemos que tener en cuenta que estamos haciendo una solicitud HTTP por medio de un método GET el cual nos traerá la información que le solicitamos. No utilizamos POST porque no vamos a cambiar el estado del sistema.
 
 ```172.30.33.95:8080/CPU```
 
@@ -66,6 +66,23 @@ Primero debemos saber cuál es la dirección de nuestra máquina virtual con el 
 
 ### Punto 4
 
-Para realizar esto es necesario crear un arhivo de pruebas, este archivo se llamará test_stats.py 
+Para realizar esto es necesario crear un arhivo de pruebas, este archivo se llamará test_stats.py el cual se encuentra dentro de la carpeta tests (esta carpeta se encuentra en este repositorio).
+
+se ejecuta el comando ```$ vi test_stats.py``` e introducimos lo siguiente:
+
+![](img/tests.PNG)
+
+Debemos importar pytest para poder ejecutar pruebas unitarias en python, además de eso se debe importar la clase Stats y el archivo app.py para poder ejecutar las pruebas.
+
+Se definen los métodos que queremos probar, en nuestro caso uno para probar el porcentaje de CPU, otro para la memoria disponible y el último para el espacio de disco disponible.
+
+**Ejecutamos las pruebas unitarias** 
+
+utilizamos el comando ```$ pytest -v``` para que python ejecute todas las pruebas que hay en todas las carpetas del repositorio. Este comando detectará el archivo de pruebas que acabamos de crear mostrando su resultado. 
+
+![](img/ejecutapytest.PNG)
+
 
 ### Punto 5
+
+
