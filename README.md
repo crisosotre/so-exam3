@@ -85,4 +85,37 @@ utilizamos el comando ```$ pytest -v``` para que python ejecute todas las prueba
 
 ### Punto 5
 
+Para hacer **integración continua** debemos crear un archivo tox.ini en la carpeta raiz del repositorio, aqui en este archivo se especificará: los entornos de prueba, el lenguaje que vamos a utilizar y las librerias necesarias para ejecutar las pruebas. Es importante, también especificar el comando que vamos a utilizar, en nuestro caso ```pytest```.
 
+se ejcuta el comando ```$ vi tox.ini```
+
+![](img/tox.PNG)
+
+Ahora, ejecutamos el archivo tox.ini con el comando ```$ tox -e pytest```y se muestran los resultados de las pruebas.
+
+![](img/toxtest.PNG)
+
+Para hacer integración continua con travis es necesario crear un archivo .travis.yml  en la carpeta raiz del repositorio. Este archivo esta en formato YAML el cual guarda la configuración necesaria para ejecutar las pruebas realizadas por [travis-ci.org](travis-ci.org). Cuando se activa Travis CI para un repositorio de GitHub, se notifica cada vez que se hagan nuevos  cambios (commits o pull request).
+
+ejecutamos el comando ```$ vi .travis.yml```
+
+![](img/travis.PNG)
+
+Despues de esto, entramos a [travis-ci.org](travis-ci.org) e iniciamos sesion con github, luego ubicamos nuestro repositorio y lo activamos. Después debemos subir los cambios que hemos hecho hasta ahora en el repositorio de la máquina virtual para que travis empiece a ejecutar las pruebas.
+
+En este caso podemos ver lo siguiente:
+
+![](img/travisprueba1.PNG)
+![](img/travisprueba2.PNG)
+![](img/travisprueba3.PNG)
+
+Finalmente hacemos un pullrequest al repositorio principal (master) de Icesi-Training so-exam3 y travis vuelve a jecutar las preubas con el pullrequest y vemos lo siguiente:
+
+![](img/pullrequest1.PNG)
+![](img/pullrequest2.PNG)
+![](img/pullrequest3.PNG)
+![](img/pullrequest4.PNG)
+
+Esto ha sido todo, hemos terminado.
+
+Hay que tener en cuenta, que el desarrollo de este parcial requiere de una maquina virtual previamente instalada, en mi caso use Centos7, también es necesario tener instalado git y tmux para crear sesiones. 
